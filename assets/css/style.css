@@ -6,4 +6,14 @@
 
 body {
 	background-color: #0C2B3D;
+	color: #ffffff;
 }
+
+.search {
+	text-align: center;
+}
+
+#userInput {
+	height: 36px;
+}
+
