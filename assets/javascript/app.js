@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 		var userInput = $("#userInput").val().trim();
 
-		var queryURL = "https://api.github.com/users/" + userInput + "/followers?access_token=57518dbae68b16c856b6040f224066cd1ad29d21"
+		var queryURL = "https://api.github.com/users/" + userInput + "/followers?access_token=d87ea542a71c93a57917d7b34ebe80a42a54c567"
 		
 		console.log(queryURL);
 
@@ -26,9 +26,7 @@ $(document).ready(function () {
         			{"name" : followers},
       			]};
 
-        	};
-
-	        var vis = d3.select(".userNetwork").append("svg:svg")
+      			var vis = d3.select(".userNetwork").append("svg:svg")
 	        .attr("width", 700)
 	        .attr("height", 500)
 	        .append("svg:g")
@@ -46,6 +44,9 @@ $(document).ready(function () {
 	      	node.append("svg:text").attr("dx", function(d) { return d.children ? 40 : 50; }).attr("dy", 3).attr("text-anchor", function(d) { return d.children ? "end" : "start"; }).text(function(d) { return d.name; });
 
 	      	node.append("svg:circle").attr("r", 4.5);
+
+
+        	};
 		});
 
 	});
