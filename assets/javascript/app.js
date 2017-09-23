@@ -27,9 +27,12 @@ $(document).ready(function () {
 
 		var userInput = $("#userInput").val().trim();
 
+
 		var queryURL = "https://api.github.com/users/" + userInput + "/followers?access_token=" + gitHubToken;
+
 		
 		console.log(queryURL);
+
 
 		$.ajax({
             url: queryURL,
