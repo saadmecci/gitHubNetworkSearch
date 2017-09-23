@@ -7,9 +7,10 @@ $(document).ready(function () {
 
 		var userInput = $("#userInput").val().trim();
 
-		var queryURL = "https://api.github.com/users/" + userInput + "/followers?access_token=d87ea542a71c93a57917d7b34ebe80a42a54c567"
+		var queryURL = "https://api.github.com/users/" + userInput + "/followers?access_token=ae9c802438fa87778d85ad9fc087412a8656c828"
 		
 		console.log(queryURL);
+
 
 		$.ajax({
             url: queryURL,
