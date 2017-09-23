@@ -1,5 +1,25 @@
 $(document).ready(function () {
 
+	var config = {
+	    apiKey: "AIzaSyBcgtk5PwiGsep3vRZLZyjSMFBQI0SWfWc",
+	    authDomain: "project1-8e7c0.firebaseapp.com",
+	    databaseURL: "https://project1-8e7c0.firebaseio.com",
+	    projectId: "project1-8e7c0",
+	    storageBucket: "project1-8e7c0.appspot.com",
+	    messagingSenderId: "1085632833712"
+  	};
+
+  	firebase.initializeApp(config);
+
+  	var database = firebase.database();
+
+  	var gitHubToken = "";
+
+  	database.ref().on("value", function (tokenPull) {
+
+  		gitHubToken = tokenPull.val().gitHubToken;
+  		
+  	});
 	
 	$("#userSearchButton").on("click", function (event) {
 
@@ -7,7 +27,9 @@ $(document).ready(function () {
 
 		var userInput = $("#userInput").val().trim();
 
-		var queryURL = "https://api.github.com/users/" + userInput + "/followers?access_token=ae9c802438fa87778d85ad9fc087412a8656c828"
+
+		var queryURL = "https://api.github.com/users/" + userInput + "/followers?access_token=" + gitHubToken;
+
 		
 		console.log(queryURL);
 
